@@ -14,5 +14,38 @@ namespace PepChat
         {
             InitializeComponent();
         }
+        private async void ActivateSearch(object sender, EventArgs e)
+        {
+            if (!this.popuplayout.IsVisible)
+            {
+                this.popuplayout.IsVisible = !this.popuplayout.IsVisible;
+                this.popuplayout.AnchorX = 1;
+                this.popuplayout.AnchorY = 1;
+
+                Animation scaleAnimation = new Animation(
+                    f => this.popuplayout.Scale = f,
+                    0.5,
+                    1,
+                    Easing.SinInOut);
+
+                Animation fadeAnimation = new Animation(
+                    f => this.popuplayout.Opacity = f,
+                    0.2,
+                    1,
+                    Easing.SinInOut);
+
+                scaleAnimation.Commit(this.popuplayout, "popupScaleAnimation", 250);
+                fadeAnimation.Commit(this.popuplayout, "popupFadeAnimation", 250);
+            }
+            else
+            {
+                await Task.WhenAny<bool>
+                  (
+                    this.popuplayout.FadeTo(0, 200, Easing.SinInOut)
+                  );
+
+                this.popuplayout.IsVisible = !this.popuplayout.IsVisible;
+            }
+        }
     }
 }

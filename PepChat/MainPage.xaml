@@ -3,14 +3,74 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PepChat.MainPage">
 
-    <StackLayout>
-        <!-- Header Area to be added -->
-        <Grid>
+    <StackLayout Padding="0">
+        <Grid BackgroundColor="ForestGreen" Padding="7" HeightRequest="60" MinimumHeightRequest="60">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ImageButton Source="Logo" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1" BackgroundColor="Aquamarine" HeightRequest="60"/>
+            <StackLayout Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="0" HeightRequest="60">
+
+                <Frame
+                x:Name="popuplayout"
+                HasShadow="True"
+                IsVisible="False"
+                Scale="0"
+                BackgroundColor="White" 
+                >
+                        <StackLayout >
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <SearchBar BackgroundColor="Azure" Placeholder="Search..." PlaceholderColor="LightGray"/>
+                            </Grid>
+                        </StackLayout>
+                </Frame>
+
+            </StackLayout>
+
+            <ImageButton Clicked="ActivateSearch" Source="SearchIcon" Grid.Column="5" Grid.Row="0" Grid.ColumnSpan="1" BackgroundColor="Bisque" HeightRequest="60"/>
         </Grid>
-        
-        <StackLayout>
-            
-        </StackLayout>
+
+        <ScrollView>
+            <StackLayout >
+
+                <Button Text="Contact/Chat Name" BackgroundColor="Black"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="Blue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+                <Button Text="Contact/Chat Name" BackgroundColor="AliceBlue"/>
+            </StackLayout>
+        </ScrollView>
     </StackLayout>
 
 </ContentPage>
